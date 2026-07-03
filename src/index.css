@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Receipt-style dashed tear edge, used on the printable bill */
+.tear-edge {
+  border-top: 1px dashed theme('colors.forest.700');
+}
+
+/* Visible keyboard focus ring everywhere, respecting accessibility */
+:focus-visible {
+  outline: 2px solid theme('colors.brass.500');
+  outline-offset: 2px;
+}
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+}
